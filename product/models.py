@@ -17,7 +17,7 @@ class Batch(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100, unique=True)
     size = models.CharField(max_length=1, choices=SHOE_SIZES)
-    color = models.CharField(max_length=1, choices=SHOE_COLOR)
+    color = models.CharField(max_length=3, choices=SHOE_COLOR)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -26,7 +26,7 @@ class Batch(models.Model):
 
     class Meta:
         ordering = ['created']
-        verbose_plural_name = 'batches'
+        verbose_name_plural = 'batches'
 
 
 class Product(models.Model):
